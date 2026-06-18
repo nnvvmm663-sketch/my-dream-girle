@@ -207,6 +207,7 @@ router.post("/chat", async (req, res) => {
 
     const orKeys = getOpenRouterKeys();
     const orModels = [
+      "qwen/qwen2.5-vl-72b-instruct:free",
       "meta-llama/llama-3.1-8b-instruct:free",
       "google/gemma-2-9b-it:free",
       "mistralai/mistral-7b-instruct:free",
