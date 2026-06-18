@@ -125,7 +125,7 @@ export async function imageToPrompt(
       const ctrl = new AbortController();
       const tmr = setTimeout(() => ctrl.abort(), 30000);
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -158,7 +158,7 @@ export async function imageToPrompt(
         method: 'POST',
         headers: { Authorization: `Bearer ${openrouterKey}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'google/gemini-2.0-flash-exp:free',
+          model: 'qwen/qwen2.5-vl-72b-instruct:free',
           max_tokens: 1024,
           messages: [{ role: 'user', content: [
             { type: 'image_url', image_url: { url: `data:${mime};base64,${b64}` } },
